@@ -201,7 +201,7 @@
     </div> -->
 
 
-    <div class="form-group">
+    <!-- <div class="form-group">
        <label for="languages">Coding Languages</label>
       <select
         class="form-control"
@@ -212,7 +212,13 @@
       >
         <option value="{{type}}" *ngFor="let type of languages">{{ type }}</option>
       </select>
-    </div>
+    </div> -->
+    <label>Coding Language</label>
+
+     <div id="checkbox" *ngFor="let Language of languages">
+       <input  type="checkbox"  name={{Language}} id={{Language}} ngModel ng-model-true-value="yes">
+       <label for={{Language}} ng>{{Language}}</label>
+     </div>
 
     <!-- <div [hidden]="!postError"
           class="alert alert-danger">
