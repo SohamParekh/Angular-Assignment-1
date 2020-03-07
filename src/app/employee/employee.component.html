@@ -129,11 +129,11 @@
     <div class="form-group">
 
       <!--Use of ngx-Bootstrap Button Module component-->
-      <div class="btn-group">
+      <div class="btn-group" >
         <label class="btn btn-primary" [(ngModel)]="employee.gender" name="gender"
-                btnRadio="male" tabindex="0" value="male" role="button" #gender="ngModel">Male</label>
+                btnRadio="male" tabindex="0" value="male" role="button" #gender="ngModel" required>Male</label>
         <label class="btn btn-primary" [(ngModel)]="employee.gender" name="gender"
-                btnRadio="female" tabindex="0" value="female" role="button" #gender="ngModel">Female</label>
+                btnRadio="female" tabindex="0" value="female" role="button" #gender="ngModel" required>Female</label>
       </div>
       <!-- <div class="form-check">
         <input
@@ -163,10 +163,6 @@
           Female
         </label>
       </div> -->
-      <div class="alert-danger"
-             *ngIf="gender.errors && (gender.dirty || gender.touched)">
-          <span *ngIf="gender.errors.required">Gender is required</span>
-        </div>
     </div>
 
     <div class="form-group">
@@ -215,9 +211,9 @@
     </div> -->
     <label>Coding Language</label>
 
-     <div id="checkbox" *ngFor="let Language of languages">
-       <input  type="checkbox"  name={{Language}} id={{Language}} ngModel ng-model-true-value="yes">
-       <label for={{Language}} ng>{{Language}}</label>
+     <div id="languages" *ngFor="let lan of languages">
+       <input  type="checkbox"  name={{lan}} id={{lan}} ngModel ng-model-true-value="yes">
+       <label for={{lan}} ng>{{lan}}</label>
      </div>
 
     <!-- <div [hidden]="!postError"
